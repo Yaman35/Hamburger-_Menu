@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+$secondary: "Open Sans", sans-serif;
+$primary: "Roboto", sans-serif;
+
+$clr-1: rgb(241, 245, 248);
+$clr-2: rgb(6, 49, 80);
+$clr-3: rgb(26, 106, 162);
+$clr-4: rgb(139, 203, 249);
+$clr-5: rgb(97, 125, 152);
+
+$clr-black: #222;
+$clr-white: #fff;
+
+$spacing: 0.25rem;
+$transition: all 0.3s linear;
+$radius: 0.5rem;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $secondary;
+  background: $clr-1;
+  color: $clr-2;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  a {
+  text-decoration: none;
+  }
+}
+
+// Navbar   =============== =============== =============== =============== 
+
+nav {
+  background: $clr-white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  
+  img {
+    display: block;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .nav-toggle {
+    font-size: 1.5rem;
+    color: $clr-5;
+    background: transparent;
+    border-color: transparent;
+    transition: $transition;
+    cursor: pointer;
+      &:hover {
+        color: $clr-2;
+        transform: rotate(90deg);
+      }
+  }
+}
+
+  .links {
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: $transition;
+    a {
+      color: $clr-3;
+      font-size: 1.3rem;
+      text-transform: capitalize;
+      letter-spacing: $spacing / 2;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: $transition;
+      
+      &:hover {
+        color: orangered;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
+    .social-icons {
+      display: none;
+    }
+
+    .show-links {
+      height: 12rem;
+    }
+
+    .show-social{
+      display: flex;
+      justify-content: space-around;
+      width: 30%;
+      margin: 0 auto;
+      a{
+        color: $clr-5;
+        transition: $transition;
+        font-size: 1.3rem;
+        &:hover{
+          color: lightblue;
+        }
+      }
+      
+    }
+
+    
+
+@media screen and (min-width: 720px) {
+
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+      .nav-header {
+        padding: 0;
+        .nav-toggle {
+          display: none;
+        }
+      }
+
+      .links {
+        height: auto;
+        display: flex;
+        a {
+          padding: 0;
+          margin: 0 0.5rem;
+          &:hover {
+          padding: 0;
+          background: transparent;
+          }
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        a {
+          margin: 0 0.5rem;
+          color: $clr-5;
+          transition: $transition;
+          font-size: 1.3rem;
+          &:hover {
+            color: $clr-4;
+          }
+        }
+      }
+  }
+}
